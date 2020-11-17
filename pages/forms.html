@@ -68,12 +68,24 @@
                 textError.textContent = "Name is invalid";
         });
 
+        const email = document.querySelector("#email");
+            const emailError = document.querySelector(".email-error");
+            email.addEventListener('input',function(){
+                let emailRegex = RegExp("^[a-zA-Z0-9+_-]+([.][a-zA-Z0-9]+)*@([a-zA-Z0-9]+)([.][a-z]+)?[.][a-z]{2,}$");
+                if(emailRegex.test(email.value))
+                    emailError.textContent = "Correct";
+                else
+                    emailError.textContent="Email is invalid";
+            });
+
         const salary = document.querySelector('#salary');
         const output = document.querySelector(".salary-output");
         output.textContent = salary.value;
         salary.addEventListener('input', function () {
             output.textContent = salary.value;
         });
+
+
     </script>
 </body>
 
