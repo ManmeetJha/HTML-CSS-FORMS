@@ -57,6 +57,7 @@
         </div>
     </form>
     <script type="text/javascript">
+
         const text = document.querySelector('#text');
         const textError = document.querySelector(".text-error");
         text.addEventListener('input', function () {
@@ -68,15 +69,27 @@
                 textError.textContent = "Name is invalid";
         });
 
+
         const email = document.querySelector("#email");
-            const emailError = document.querySelector(".email-error");
-            email.addEventListener('input',function(){
-                let emailRegex = RegExp("^[a-zA-Z0-9+_-]+([.][a-zA-Z0-9]+)*@([a-zA-Z0-9]+)([.][a-z]+)?[.][a-z]{2,}$");
-                if(emailRegex.test(email.value))
-                    emailError.textContent = "Correct";
-                else
-                    emailError.textContent="Email is invalid";
-            });
+        const emailError = document.querySelector(".email-error");
+        email.addEventListener('input', function () {
+            let emailRegex = RegExp("^[a-zA-Z0-9+_-]+([.][a-zA-Z0-9]+)*@([a-zA-Z0-9]+)([.][a-z]+)?[.][a-z]{2,}$");
+            if (emailRegex.test(email.value))
+                emailError.textContent = "Correct";
+            else
+                emailError.textContent = "Email is invalid";
+        });
+
+        const phone = document.getElementById("tel");
+        const phoneError = document.querySelector(".tel-error");
+        phone.addEventListener('input', function () {
+            let phoneRegex = RegExp("^[0-9]{1,}[ ][1-9]{1}[0-9]{9}$");
+            if (phoneRegex.test(phone.value))
+                phoneError.textContent = "Correct";
+            else
+                phoneError.textContent = "Phone number is invalid";
+        });
+
 
         const salary = document.querySelector('#salary');
         const output = document.querySelector(".salary-output");
